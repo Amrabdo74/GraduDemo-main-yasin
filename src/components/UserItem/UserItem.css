@@ -1,0 +1,78 @@
+.user-card {
+    width: 212px;
+    padding: 16px;
+    background-color: #fff;
+    border: 1px solid #347AE2;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+.user-img {
+    background-color: #E0E2E7;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 400;
+}
+
+.status {
+    font-size: 14px;
+    font-family: Poppins;
+    border-radius: 6px;
+    padding: 2px 8px 2px 8px;
+}
+
+.status-active {
+    background-color: #E9FAF7;
+    color: #34C759;
+
+}
+
+.status-blocked {
+    background-color: #fef0ef;
+    color: #FF3B30;
+}
+
+hr.dashed {
+    border-top: 2px dashed #7C8DB5;
+    width: 100%;
+    border-bottom: none;
+   }
+
+.row {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.col {
+    width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.prop-name {
+    margin-bottom: 4px;
+    font-family: Poppins;
+    color: #7C8DB5;
+    font-size: 12px;
+}
+
+.prop-val {
+    font-size: 14px;
+    font-family: Poppins;
+    font-weight: 400;
+    color: #2D2D2D;
+    line-height: 21px;
+}

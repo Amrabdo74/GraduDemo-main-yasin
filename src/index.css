@@ -1,0 +1,880 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Main styles  */
+:root {
+  --bodyColor: #E6EDFF;
+  --activeBlue: #347AE2;
+  --disabledColor: #7c8db5;
+  --orangedColor: #ff9500;
+  --whiteColor: white;
+  --boxShadowColor: rgb(176, 173, 173);
+  --boxShadow: -3px 2px 32px -23px var(--boxShadowColor);
+  --blackColor: #1E1E1E;
+}
+
+/* Main styles  */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bodyColor) !important;
+}
+
+.app {
+  width: 100%;
+  flex-direction: row-reverse;
+  justify-content: flex-start !important;
+  height: 100vh;
+  overflow: hidden !important;
+}
+
+.container-fluid {
+  padding: 45px 35px 0px 35px !important;
+  margin-bottom: 60px !important;
+}
+
+.side {
+  height: 100vh !important;
+  width: fit-content !important;
+  position: sticky !important;
+  top: 0px !important;
+  left: 0px !important;
+}
+
+.content {
+  overflow: auto !important;
+  flex-grow: 1;
+}
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-text h3 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 42px;
+  color: #2D2D2D;
+}
+
+.header-text p {
+  font-size: 16;
+  font-weight: 400;
+  line-height: 24px;
+  color: #7C8DB5;
+}
+
+.header-img {
+  display: flex;
+  height: 32px;
+  width: 245px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.down {
+  display: flex;
+  gap: 10px;
+}
+
+.down p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.header-img img {
+  width: 24px;
+}
+
+.header-img .down-img {
+  width: 11px;
+}
+
+.data {
+  width: 20%;
+  height: fit-content !important;
+}
+
+@media (max-width:992px) {
+  .data {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    width: 48%;
+    height: fit-content !important;
+    margin: 20px 0px;
+  }
+
+  .Headerdata {
+    background-color: transparent !important;
+    padding: 10px 0px !important;
+  }
+
+  .header-img {
+    width: 100%;
+  }
+
+  .header-text {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width:600px) {
+  .data {
+    width: 100%;
+  }
+
+  .Header {
+    flex-wrap: wrap-reverse;
+  }
+}
+
+.Headerdata {
+  background-color: #ffff;
+  padding: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 15px;
+  height: fit-content !important;
+  width: 100% !important;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* .data::after{
+  position: absolute;
+  top: 0;
+  left: -60px;
+  content: '';
+  width: 1px;
+  height: 100%;
+  background-color: #E6EDFF  ;
+} */
+.sidebar .ps-sidebar-container {
+  width: 95% !important;
+}
+
+.css-dip3t8 {
+  overflow: hidden;
+}
+
+.sidebar {
+  background-color: white !important;
+  height: 100vh !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: flex-end;
+  width: 200px !important;
+  overflow: auto !important;
+}
+
+@media (max-width:768px) {
+  .side-collapse {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #e9e6e67a;
+
+  }
+
+  .pie-container {
+    z-index: 0;
+  }
+
+  .pos *,
+  .pos svg {
+    z-index: 1 !important;
+  }
+}
+
+.sidebar,
+.ps-sidebar-container {
+  background-color: white !important;
+  margin: 0px !important;
+  border: 0px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+}
+
+.ps-menu-button {
+  color: var(--disabledColor) !important;
+  font-size: 18px !important;
+}
+
+.ps-menu-button:hover {
+  background-color: white !important;
+  color: var(--activeBlue) !important;
+}
+
+.collapsed-sidebar {
+  width: 40px !important;
+  overflow: hidden;
+}
+
+.active .ps-menu-button {
+  color: var(--activeBlue) !important;
+}
+
+.menue .ps-menu-button {
+  color: var(--disabledColor) !important;
+}
+
+.menue .active .ps-menu-label {
+  color: var(--activeBlue) !important;
+  position: relative;
+}
+
+.active {
+  background-color: transparent !important;
+  color: var(--activeBlue) !important;
+  width: 100% !important;
+}
+
+.submenu-clicked::after,
+.active::after {
+  content: "";
+  height: 40%;
+  width: 3px;
+  border-radius: 1.5px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) !important;
+  right: 0px;
+  background-color: var(--activeBlue);
+}
+
+.dropdown .active::after {
+  right: 4px !important;
+}
+
+.css-honxw6 {
+  transform: rotate(45deg) !important;
+}
+
+.css-jn69v9 {
+  transform: rotate(225deg) !important;
+}
+
+.sidebar-footer button {
+  width: 100%;
+  border: none;
+  display: flex;
+  padding-left: 30px;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: transparent !important;
+  color: red;
+  font-size: 20px !important;
+}
+
+.collapsePutton {
+  height: 40px;
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  width: 40px;
+  color: var(--activeBlue);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.collapsePutton button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 2px solid var(--activeBlue);
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.collapsePutton button svg {
+  fill: var(--activeBlue);
+}
+
+/* Add this to your Tailwind CSS or CSS file */
+
+/* ========= Bar Chart Component ========= */
+.component-header {
+  width: 100%;
+  padding: 10px 30px 20px 30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.data-select {
+  background-color: transparent !important;
+  width: fit-content;
+  border: none;
+  outline: none !important;
+  position: relative;
+}
+
+.select-box {
+  width: 130px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 10px 5px 10px;
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px var(--boxShadowColor);
+}
+
+.data-select .menu {
+  position: absolute;
+  top: 44px;
+  width: 130px;
+  background-color: var(--whiteColor);
+  left: 0px;
+  margin-top: -7px;
+  box-shadow: 1px 2px 5px var(--boxShadowColor);
+  border-radius: 5px !important;
+  overflow: hidden !important;
+  padding: 0px 10px;
+  z-index: 11111111111;
+}
+
+.data-select .menu span {
+  display: inline-block;
+  width: 100%;
+  color: var(--disabledColor);
+  padding: 5px 0px;
+}
+
+.data-select .menu span:hover {
+  color: var(--activeBlue);
+  cursor: pointer;
+}
+
+.hide-drop {
+  height: 0px !important;
+  transition: all .3s ease-in;
+}
+
+.view-drop {
+  height: fit-content;
+  transition: all .3s ease-in;
+}
+
+.recharts-legend-wrapper {
+  display: none !important;
+}
+
+.barChartInfoColors {
+  display: flex;
+  align-self: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.barChartInfoColors p {
+  padding: 10px;
+}
+
+.background {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border: none !important;
+  border-radius: 50%;
+  margin: 0px 5px;
+}
+
+/* ========= Bar Chart Component ========= */
+
+/* ========= Pie Chart Component ========= */
+.component-container {
+  width: 49%;
+  background-color: var(--whiteColor);
+  padding: 20px;
+  margin: 10px 0px;
+  border-radius: 20px;
+  box-shadow: var(--boxShadow);
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.component-container .component-header {
+  padding: 10px 0px;
+}
+
+.data-show {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.data-show .pie-container {
+  margin-top: -50px;
+  position: relative;
+}
+
+.pie-title {
+  position: absolute;
+  height: 100%;
+  width: 190px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center !important;
+  padding: 50px 30px 0px 20px;
+  text-align: center !important;
+  justify-content: center;
+}
+
+.pie-title p {
+  font-size: 30px;
+  line-height: 15px !important;
+  font-weight: 700;
+  padding: 0px !important;
+  padding-top: 10px !important;
+}
+
+.pie-title span {
+  display: inline-block;
+  font-size: 18px;
+  margin-top: -10px !important;
+  color: var(--disabledColor);
+}
+
+/* .div div{
+  height: 130px !important;
+  color: #1b429d;
+  background-color: #2D2D2D;
+} */
+.pie-container-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px 0px;
+}
+
+.title {
+  position: absolute;
+}
+
+@media (max-width:768px) {
+  .component-container {
+    width: 100%;
+  }
+}
+
+@media (max-width:630px) {
+  .data-show {
+    flex-direction: column-reverse;
+  }
+
+  .data-show p,
+  .barChartInfoColors p {
+    display: inline-block;
+    margin-bottom: 0px;
+    padding: 10px 3px;
+  }
+
+  .barChartInfoColors {
+    justify-content: flex-start;
+    margin-bottom: 15px;
+  }
+}
+
+.recharts-text {
+  font-size: 15px !important;
+  background-color: #347AE2 !important;
+  width: 200px;
+  white-space: wrap !important;
+  text-wrap: wrap !important;
+}
+
+/* ========= Pie Chart Component ========= */
+
+/* ========= Line Chart Component ========= */
+.chart-container {
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: var(--boxShadow);
+  padding: 15px;
+  margin-bottom: 30px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.custom-tooltip {
+  background-color: #fff;
+  box-shadow: 0px 2px 10px 0px #7C8DB51F;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 400;
+  color: #7C8DB5;
+}
+
+.value {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.chart-header {
+  padding: 15px 15px 0px 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chart-title {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.chart-colors {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.line-colors-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.background {
+  margin: 10px;
+}
+
+/* ========= Line Chart Component ========= */
+
+/* ========= List Filter Component ========= */
+.filter-container {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  border: 1px solid #7C8DB5;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: #fff;
+  justify-content: space-between;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.selected-filter-button {
+  padding: 6px 12px 6px 12px;
+  border-radius: 6px;
+  background-color: #2D2D2D;
+  color: #fff;
+  border: none;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  transition-duration: 0.2s;
+}
+
+.filter-button {
+  padding: 6px 12px 6px 12px;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #7C8DB5;
+  border: none;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* ========= List Filter Component ========= */
+
+/* ========= Users List Component ========= */
+
+.users-list {
+  padding: 0px;
+  width: 100%;
+  max-height: 586px;
+
+  align-items: flex-start;
+  align-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-items: space-between;
+  gap: 15px;
+  list-style: none;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.users-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========= Users List Component ========= */
+
+/* ========= Table Component ========= */
+.table-container {
+  width: 100%;
+  height: fit-content;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: var(--boxShadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.table-header {
+  padding: 18px 24px 18px 24px;
+  width: 100%;
+  border-bottom: 1px solid #F0F1F3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.table-title {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 500;
+  color: #2D2D2D;
+}
+
+.table-row.MuiTableRow-root {
+  border-bottom: 1px;
+  border-color: #E6EDFF;
+  border-style: solid;
+}
+
+.table-head-cell.MuiTableCell-root {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.row-cell.MuiTableCell-root {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* ========= Table Component ========= */
+
+/* ========= User profile page ========= */
+.user-profile-container {
+  display: flex;
+  flex-direction: row;
+  justify-items: space-between;
+  gap: 24px;
+
+}
+/* ========= User profile page ========= */
+
+/* ================ Page Location Component =========== */
+.location-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+.location-container .pages-links{
+  flex-basis: 1;
+}
+.location-container .con-btn{
+  text-align: right !important;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+.location-container .con-btn button{
+  padding: 5px 10px 5px 5px;
+  border: none;
+  margin: 5px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.location-container .con-btn button img{
+  margin-right: 7px;
+}
+
+/* ============== Carousel Styling ================= */
+.carousel-container{
+  width: 535px;
+  /* max-width: 1080px; */
+  height: fit-content;
+  overflow: hidden !important;
+  position: relative;
+}
+.carousel-container .slide{
+  background-color: black !important;
+}
+.carousel-container img{
+  height: 100vh;
+  opacity: 0.7;
+}
+.carousel-container .slide-info{
+  width: 77%;
+  text-align: center;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  z-index: 4;
+}
+.carousel-container .slide-info h2{
+  font-Weight: 500;
+  font-Size: 36.41px;
+  line-height: 54.61px;
+}
+.carousel-container  .slide-info p{
+  font-weight: 500;
+  font-size: 24px;
+}
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+  bottom: 10%;
+}
+.swiper-pagination span{
+  background-color: white !important;
+  opacity: 1;
+}
+.swiper-pagination span.swiper-pagination-bullet-active{
+  background-color: var(--activeBlue) !important;
+  border-radius: 5px !important;
+  width: 25px !important;
+}
+/* ============== Carousel Styling ================= */
+
+/* ============== LogIn Form Styling =============== */
+
+.form-container{
+  width: 520px;
+}
+.form-container .login-info{
+  text-align: left;
+}
+.form-container .login-info h1{
+  line-height: 42px;
+  font-size: 40px;
+  margin: 20px 0px;
+  font-weight: 500;
+}
+.form-container .login-info p{
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--disabledColor);
+  margin: 15px 0px;
+}
+.form-container .input-container{
+  width: 100%;
+  background-color: var(--whiteColor);
+  border: 1px solid var(--disabledColor);
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  margin: 20px 0px;
+  border-radius: 10px;
+  justify-content: flex-start;
+}
+.form-container .input-container span{
+  display: inline-block;
+  width: 26px;
+}
+.form-container .input-container input{
+  appearance: none;
+  -webkit-appearance: none;
+  background: none !important;
+  display: inline-block;
+  margin: 0px 10px;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--disabledColor);
+  padding: 10px 0px;
+  width: 90% !important;
+}
+.form-container .input-container input::placeholder {
+  color: var(--disabledColor)
+}
+.form-container .forget{
+  text-align: right;
+}
+.form-container .forget a{
+  color: var(--disabledColor);
+  font-family: cairo;
+  font-size: 19px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.form-container .submit-btn button{
+  width: 100%;
+  background-color: var(--activeBlue);
+  color: var(--whiteColor);
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 42px;
+  margin: 20px auto;
+} 
+/* ============== LogIn Form Styling =============== */
+
+
+/* ============== Login Page Styling =============== */
+.login-page{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.login-page .right-side{
+  width: calc(100% - 535px);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+}
+/* ============== Login Page Styling =============== */
+
